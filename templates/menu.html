@@ -1,1 +1,35 @@
- 
+ <html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}">
+	</head>
+
+	<body>
+		<div id="bar">
+			<h1 id="title">Big 6 Sport Goods</h1>
+			<span><button onclick="location.href='{{url_for('login')}}'">Login</button></span>
+		</div>
+		<br>
+		<section id="info">
+		<div id="category">
+			<h1>Categories</h1>
+			<ul>
+			{% for i in category %}
+				<li><h3><a href='{{url_for('categoryMainMenu',category_id = i.id)}}'>{{i.sport}}</a></h3></li>
+			{% endfor %}
+			</ul>
+		</div>
+		<div id="items">
+			{% for i in sport %}
+			<h1>{{ i.sport }} Items</h1>
+			{% endfor%}
+			<ul>
+			{% for i in items %}
+					<li><h3><a href ='{{url_for('categoryMenu',category_id = i.sport_id, menu_item_id = i.id)}}'>{{i.name}} ({{i.price}})</a></h3></li>
+			{% endfor %}
+			</ul>
+		</div>
+		</section>
+		<button onclick="location.href='{{url_for('sportCategory')}}'">Back</button>
+	</body>
+
+</html>

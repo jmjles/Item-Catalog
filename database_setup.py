@@ -12,7 +12,7 @@ class SportCategory(Base):
     __tablename__ = 'category'
 
     id = Column(Integer, primary_key=True)
-    name = Column(String(250), nullable=False)
+    sport = Column(String(250), nullable=False)
 
 
 class MenuItem(Base):
@@ -22,6 +22,7 @@ class MenuItem(Base):
     name = Column(String(80), nullable=False)
     description = Column(String(1000))
     price = Column(String(8))
+    date = Column(Integer)
     sport_id = Column(Integer, ForeignKey('category.id'))
     sport = relationship(SportCategory)
 

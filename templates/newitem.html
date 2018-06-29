@@ -1,0 +1,37 @@
+ <html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}">
+	</head>
+
+	<body>
+		<div id="bar">
+			<h1 id="title">New Item</h1>
+		</div>
+		<br>
+
+		<form action= "{{url_for('categoryMenuNew')}}" method = 'POST'>
+		<p>Name:</p>
+		<input type = 'text' size='30' name = 'name' value="{{url_for('login')}}">
+
+		<p>Price:</p>
+		<input type = 'number' size='30' name = 'price'>
+
+
+		<p>Description:</p>
+		<input type = 'text' size='30' name = 'description'>
+
+		<p>Category:</p>
+		<select name="category">
+			{% for a in category %}
+			<option value="{{a.sport}}">{{a.sport}}</option>
+			{% endfor %}
+		</select>
+		<input type='submit' value='Edit'>
+
+
+		</form>
+		<a href= '{{url_for('sportCategory')}}'>Cancel</a>
+
+	</body>
+
+</html>

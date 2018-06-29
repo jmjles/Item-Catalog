@@ -1,1 +1,29 @@
- 
+body {
+	background-color: rgb(238,238,224);
+}
+#title{
+	font-size: 40px;
+}
+#info{
+	display: flex;
+	background-color: white;
+}
+#category{
+	flex:1;
+}
+
+#items{
+	flex: 2;
+}
+#bar{
+	width: 100%;
+	background-color: lightblue;
+}
+ul li a{
+	text-decoration: none;
+}
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
